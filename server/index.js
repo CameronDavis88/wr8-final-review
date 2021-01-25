@@ -28,6 +28,12 @@ app.post('/api/register', authCtrl.register)
 app.post('/api/login', authCtrl.login)
 app.get('/api/logout', authCtrl.logout)
 
-//Main Endpoints
+//Post Endpoints
+app.post('/api/post', mainCtrl.createPost)
+app.get('/api/posts/:id', mainCtrl.getUserPosts)
+app.delete('/api/post/:id', mainCtrl.deletePost)
+
+//User Endpoints
+app.put('/api/user/:id', mainCtrl.updateUsername)
 
 app.listen(SERVER_PORT, () => console.log(`Memeing on port ${SERVER_PORT}`))
